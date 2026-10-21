@@ -1,0 +1,77 @@
+[
+  {
+    "profile": "Fibre",
+    "rtt": 10,
+    "mbps": 100,
+    "HTTP/1.1": {
+      "total": 0.13423640000019077,
+      "critical": 0.043764500000179396,
+      "html": 0.031477300000005926,
+      "up": 31368,
+      "down": 795094,
+      "conns": 6,
+      "req_header_bytes": 31368,
+      "requests": 45
+    },
+    "OptiHTTP": {
+      "total": 0.1618149999999332,
+      "critical": 0.055330099999991944,
+      "html": 0.031756599999880564,
+      "up": 2267,
+      "down": 788400,
+      "conns": 1,
+      "req_header_bytes": 2099,
+      "requests": 45
+    }
+  },
+  {
+    "profile": "4G",
+    "rtt": 60,
+    "mbps": 20,
+    "HTTP/1.1": {
+      "total": 0.9101180999998633,
+      "critical": 0.35088309999991907,
+      "html": 0.12827889999994113,
+      "up": 31368,
+      "down": 795094,
+      "conns": 6,
+      "req_header_bytes": 31368,
+      "requests": 45
+    },
+    "OptiHTTP": {
+      "total": 0.6895751000001837,
+      "critical": 0.2422550000001138,
+      "html": 0.12757489999989957,
+      "up": 2267,
+      "down": 788400,
+      "conns": 1,
+      "req_header_bytes": 2099,
+      "requests": 45
+    }
+  },
+  {
+    "profile": "Slow mobile",
+    "rtt": 150,
+    "mbps": 5,
+    "HTTP/1.1": {
+      "total": 2.3347555000000284,
+      "critical": 0.8176502999999684,
+      "html": 0.32061019999991913,
+      "up": 31368,
+      "down": 795094,
+      "conns": 6,
+      "req_header_bytes": 31368,
+      "requests": 45
+    },
+    "OptiHTTP": {
+      "total": 1.7976455000000442,
+      "critical": 0.5802418000000671,
+      "html": 0.3208428999998887,
+      "up": 2267,
+      "down": 788400,
+      "conns": 1,
+      "req_header_bytes": 2099,
+      "requests": 45
+    }
+  }
+]

@@ -1,0 +1,26 @@
+Benchmarking (5 runs per cell)...
+  finished profile Fibre
+  finished profile 4G
+  finished profile Slow mobile
+
+Network                   Metric                      HTTP/1.1    OptiHTTP    Change
+------------------------------------------------------------------------------------
+Fibre (10ms, 100Mbps)     Page fully loaded (s)           0.15        0.11      -29%
+                          Render-critical done (s)        0.06        0.04      -30%
+                          Request bytes sent            31,368       2,267      -93%
+                          Request header bytes          31,368       2,099      -93%
+                          TCP connections                    6           1      -83%
+
+4G (60ms, 20Mbps)         Page fully loaded (s)           0.80        0.50      -37%
+                          Render-critical done (s)        0.32        0.21      -33%
+                          Request bytes sent            31,368       2,267      -93%
+                          Request header bytes          31,368       2,099      -93%
+                          TCP connections                    6           1      -83%
+
+Slow mobile (150ms, 5Mbps)Page fully loaded (s)           2.27        1.72      -24%
+                          Render-critical done (s)        0.79        0.55      -30%
+                          Request bytes sent            31,368       2,267      -93%
+                          Request header bytes          31,368       2,099      -93%
+                          TCP connections                    6           1      -83%
+
+Wrote results.json and report.html

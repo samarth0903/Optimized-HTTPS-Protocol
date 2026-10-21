@@ -1,0 +1,53 @@
+<!doctype html><meta charset="utf-8"><title>OptiHTTP vs HTTP/1.1</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+:root{--bg:#fff;--fg:#1a1a1a;--mut:#666;--a:#c0504d;--b:#2e8b57;--card:#f5f5f5}
+@media(prefers-color-scheme:dark){:root{--bg:#16181c;--fg:#eee;--mut:#999;--card:#22252b}}
+body{font:15px system-ui,sans-serif;background:var(--bg);color:var(--fg);max-width:820px;margin:2rem auto;padding:0 1rem}
+section{background:var(--card);border-radius:12px;padding:1rem 1.2rem;margin:1rem 0}
+h2 small{color:var(--mut);font-weight:400;font-size:.7em}
+.m{margin:.9rem 0} .t{font-weight:600;margin-bottom:.3rem}
+.bar{display:flex;align-items:center;gap:.5rem;margin:.15rem 0}
+.l{width:70px;color:var(--mut);font-size:.85em}
+.bar i{display:block;height:14px;border-radius:3px;min-width:2px} .a{background:var(--a)} .b{background:var(--b)}
+.bar b{font-size:.85em;font-weight:500} .d{color:var(--b);font-weight:700;text-align:right}
+</style>
+<h1>OptiHTTP vs HTTP/1.1</h1>
+<p>Same site (1 HTML, 3 CSS, 5 JS, 24 images, 12 API calls), same server logic, emulated network. Median of runs. Lower is better.</p>
+<section><h2>Fibre <small>RTT 10 ms · 100 Mbps</small></h2><div class="m"><div class="t">Page fully loaded</div>
+<div class="bar"><span class="l">HTTP/1.1</span><i class="a" style="width:83.0%"></i><b>0.13s</b></div>
+<div class="bar"><span class="l">OptiHTTP</span><i class="b" style="width:100.0%"></i><b>0.16s</b></div>
+<div class="d">+21%</div></div><div class="m"><div class="t">Render-critical resources ready</div>
+<div class="bar"><span class="l">HTTP/1.1</span><i class="a" style="width:79.1%"></i><b>0.04s</b></div>
+<div class="bar"><span class="l">OptiHTTP</span><i class="b" style="width:100.0%"></i><b>0.06s</b></div>
+<div class="d">+26%</div></div><div class="m"><div class="t">Bytes sent client→server</div>
+<div class="bar"><span class="l">HTTP/1.1</span><i class="a" style="width:100.0%"></i><b>31,368 B</b></div>
+<div class="bar"><span class="l">OptiHTTP</span><i class="b" style="width:7.2%"></i><b>2,267 B</b></div>
+<div class="d">-93%</div></div><div class="m"><div class="t">TCP connections</div>
+<div class="bar"><span class="l">HTTP/1.1</span><i class="a" style="width:100.0%"></i><b>6</b></div>
+<div class="bar"><span class="l">OptiHTTP</span><i class="b" style="width:16.7%"></i><b>1</b></div>
+<div class="d">-83%</div></div></section><section><h2>4G <small>RTT 60 ms · 20 Mbps</small></h2><div class="m"><div class="t">Page fully loaded</div>
+<div class="bar"><span class="l">HTTP/1.1</span><i class="a" style="width:100.0%"></i><b>0.91s</b></div>
+<div class="bar"><span class="l">OptiHTTP</span><i class="b" style="width:75.8%"></i><b>0.69s</b></div>
+<div class="d">-24%</div></div><div class="m"><div class="t">Render-critical resources ready</div>
+<div class="bar"><span class="l">HTTP/1.1</span><i class="a" style="width:100.0%"></i><b>0.35s</b></div>
+<div class="bar"><span class="l">OptiHTTP</span><i class="b" style="width:69.0%"></i><b>0.24s</b></div>
+<div class="d">-31%</div></div><div class="m"><div class="t">Bytes sent client→server</div>
+<div class="bar"><span class="l">HTTP/1.1</span><i class="a" style="width:100.0%"></i><b>31,368 B</b></div>
+<div class="bar"><span class="l">OptiHTTP</span><i class="b" style="width:7.2%"></i><b>2,267 B</b></div>
+<div class="d">-93%</div></div><div class="m"><div class="t">TCP connections</div>
+<div class="bar"><span class="l">HTTP/1.1</span><i class="a" style="width:100.0%"></i><b>6</b></div>
+<div class="bar"><span class="l">OptiHTTP</span><i class="b" style="width:16.7%"></i><b>1</b></div>
+<div class="d">-83%</div></div></section><section><h2>Slow mobile <small>RTT 150 ms · 5 Mbps</small></h2><div class="m"><div class="t">Page fully loaded</div>
+<div class="bar"><span class="l">HTTP/1.1</span><i class="a" style="width:100.0%"></i><b>2.33s</b></div>
+<div class="bar"><span class="l">OptiHTTP</span><i class="b" style="width:77.0%"></i><b>1.80s</b></div>
+<div class="d">-23%</div></div><div class="m"><div class="t">Render-critical resources ready</div>
+<div class="bar"><span class="l">HTTP/1.1</span><i class="a" style="width:100.0%"></i><b>0.82s</b></div>
+<div class="bar"><span class="l">OptiHTTP</span><i class="b" style="width:71.0%"></i><b>0.58s</b></div>
+<div class="d">-29%</div></div><div class="m"><div class="t">Bytes sent client→server</div>
+<div class="bar"><span class="l">HTTP/1.1</span><i class="a" style="width:100.0%"></i><b>31,368 B</b></div>
+<div class="bar"><span class="l">OptiHTTP</span><i class="b" style="width:7.2%"></i><b>2,267 B</b></div>
+<div class="d">-93%</div></div><div class="m"><div class="t">TCP connections</div>
+<div class="bar"><span class="l">HTTP/1.1</span><i class="a" style="width:100.0%"></i><b>6</b></div>
+<div class="bar"><span class="l">OptiHTTP</span><i class="b" style="width:16.7%"></i><b>1</b></div>
+<div class="d">-83%</div></div></section>
